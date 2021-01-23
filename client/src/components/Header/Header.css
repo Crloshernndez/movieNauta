@@ -1,0 +1,30 @@
+.header {
+  margin: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__left {
+  width: 40%;
+}
+
+.header__left ul {
+  padding: 0px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__left li {
+  margin: 10px;
+}
+
+.header__rigth {
+  width: 30%;
+}
+
+.header__rigth input {
+  width: 100%;
+}
