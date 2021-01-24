@@ -1,9 +1,13 @@
 import React from "react";
+import Banner from "../../components/Banner/Banner";
+import Row from "../../components/Row/Row";
+import requests from "../../request/Tmdb";
 
 function Home() {
   return (
     <div className="home">
-      <h1>Home</h1>
+      <Banner />
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
     </div>
   );
 }
