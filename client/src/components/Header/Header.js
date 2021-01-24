@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import TextField from "@material-ui/core/TextField";
 import Logo from "../../assets/images/logo.svg";
 
 function Header() {
+  const [show, handleShow] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else handleShow(false);
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
+
   return (
     <>
-      <div className="header">
+      <div className={`header ${show && "header__black"}`}>
         <div className="header__left">
           <Link to="/">
             <img src={Logo} alt="logo" />
