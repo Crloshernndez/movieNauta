@@ -3,6 +3,11 @@
   color: white;
 }
 
+.row__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .row__title {
   -webkit-animation: row__title 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: row__title 3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -38,6 +43,11 @@
   overflow-y: hidden;
   overflow-x: scroll;
   padding: 20px;
+}
+.row__posters--gridMode {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
 }
 
 .row__posters::-webkit-scrollbar {
