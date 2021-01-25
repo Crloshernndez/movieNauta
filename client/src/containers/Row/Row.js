@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Row.css";
 import axios from "../../request/axios";
 import ButtonSwift from "../../components/ButtonSwift/ButtonSwift";
+import MoviePoster from "../MoviePoster/MoviePoster";
 
 const baseUrl = "https://image.tmdb.org/t/p/original/";
 
@@ -38,13 +39,17 @@ function Row({ title, fetchUrl, isLargeRow }) {
       {/* container => posters */}
       <div className={grid ? "row__posters--gridMode" : "row__posters"}>
         {movies.map((movie) => (
-          <img
+          <MoviePoster
             key={movie.id}
-            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-            src={`${baseUrl}${
+            url={`${baseUrl}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
-            alt={movie.name}
+            name={movie.name}
+            movieName={movie.name || movie.title}
+            grid={grid}
+            title={movie.name || movie.title}
+            description={movie.overview}
+            movie={movie?.backdrop_path}
           />
         ))}
       </div>

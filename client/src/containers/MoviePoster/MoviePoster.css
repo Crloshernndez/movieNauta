@@ -1,0 +1,4 @@
+.MoviePoster__gridMode {
+  display: flex;
+  justify-content: space-between;
+}
