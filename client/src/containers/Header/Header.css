@@ -29,6 +29,7 @@
 .header__left a {
   text-decoration: none;
   margin: 20px;
+  color: white;
 }
 
 .header__left img {
