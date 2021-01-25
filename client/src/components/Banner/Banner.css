@@ -87,3 +87,9 @@
     #111
   );
 }
+
+@media screen and (max-width: 375px) {
+  .banner__contents {
+    margin-left: 15px;
+  }
+}

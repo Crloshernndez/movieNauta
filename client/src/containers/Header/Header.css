@@ -24,7 +24,6 @@
 .header__left {
   width: 40%;
   display: flex;
-  align-items: center;
 }
 
 .header__left a {
@@ -44,8 +43,21 @@
   width: 100%;
 }
 
+@media screen and (min-width: 751px) {
+  .header__burgerMenu {
+    display: none;
+  }
+}
 @media screen and (max-width: 750px) {
-  .header {
-    background-color: blueviolet;
+  .header__left {
+    display: none;
+  }
+  .header__rigth {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .header__rigth {
+    width: 80%;
   }
 }

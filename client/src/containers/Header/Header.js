@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import TextField from "@material-ui/core/TextField";
 import Logo from "../../assets/images/logo.svg";
+import BurgerMenu from "../../components/BurgerMenu/BurgerMenu";
 
 function Header() {
   const [show, handleShow] = useState(false);
@@ -21,6 +22,9 @@ function Header() {
   return (
     <>
       <div className={`header ${show && "header__black"}`}>
+        <div className="header__burgerMenu">
+          <BurgerMenu />
+        </div>
         <div className="header__left">
           <Link to="/">
             <img src={Logo} alt="logo" />
