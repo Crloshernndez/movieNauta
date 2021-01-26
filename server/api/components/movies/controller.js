@@ -1,29 +1,29 @@
 const store = require("./store");
 
-function upcoming() {
+function getUpcoming() {
   return new Promise((resolve, reject) => {
-    resolve(store.upcoming());
+    resolve(store.getUpcoming());
   });
 }
-function popular() {
+function getPopular() {
   return new Promise((resolve, reject) => {
-    resolve(store.popular());
+    resolve(store.getPopular());
   });
 }
-function toprated() {
+function getTop_rated() {
   return new Promise((resolve, reject) => {
-    resolve(store.toprated());
+    resolve(store.getTop_rated());
   });
 }
-function documentaries() {
+function getDocumentaries() {
   return new Promise((resolve, reject) => {
-    resolve(store.documentaries());
+    resolve(store.getDocumentaries());
   });
 }
 
 module.exports = {
-  upcoming,
-  popular,
-  toprated,
-  documentaries,
+  getUpcoming,
+  getPopular,
+  getTop_rated,
+  getDocumentaries,
 };

@@ -4,38 +4,38 @@ const controller = require("./controller");
 
 const router = express.Router();
 
-router.get("/upcoming", upcoming);
-router.get("/popular", popular);
-router.get("/top_rated", toprated);
-router.get("/documentaries", documentaries);
+router.get("/upcoming", getUpcoming);
+router.get("/popular", getPopular);
+router.get("/top_rated", getTop_rated);
+router.get("/documentaries", getDocumentaries);
 
-function upcoming(req, res) {
+function getUpcoming(req, res) {
   controller
-    .upcoming()
+    .getUpcoming()
     .then((list) => {
       response.success(req, res, list, 200);
     })
     .catch((err) => response.error(req, res, err.message, 500));
 }
-function popular(req, res) {
+function getPopular(req, res) {
   controller
-    .popular()
+    .getPopular()
     .then((list) => {
       response.success(req, res, list, 200);
     })
     .catch((err) => response.error(req, res, err.message, 500));
 }
-function toprated(req, res) {
+function getTop_rated(req, res) {
   controller
-    .toprated()
+    .getTop_rated()
     .then((list) => {
       response.success(req, res, list, 200);
     })
     .catch((err) => response.error(req, res, err.message, 500));
 }
-function documentaries(req, res) {
+function getDocumentaries(req, res) {
   controller
-    .documentaries()
+    .getDocumentaries()
     .then((list) => {
       response.success(req, res, list, 200);
     })
