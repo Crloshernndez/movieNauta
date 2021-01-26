@@ -1,11 +1,32 @@
 const config = require("../../../config");
+const request = require("./requests");
 
 const fetch = require("node-fetch");
 
 const upcoming = async () => {
   const data = await fetch(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=d25c60689f82d78efa196342437cdd62&language=en-US"
-    // `${config.tmdb.baseUrl}/movie/upcoming?api_key=${config.tmdb.apiKey}&language=en-US`
+    `${config.tmdb.baseUrl}${request.upcoming}${config.tmdb.apiKey}`
+  );
+  const response = data.json();
+  return response;
+};
+const popular = async () => {
+  const data = await fetch(
+    `${config.tmdb.baseUrl}${request.popular}${config.tmdb.apiKey}`
+  );
+  const response = data.json();
+  return response;
+};
+const toprated = async () => {
+  const data = await fetch(
+    `${config.tmdb.baseUrl}${request.toprated}${config.tmdb.apiKey}`
+  );
+  const response = data.json();
+  return response;
+};
+const documentaries = async () => {
+  const data = await fetch(
+    `${config.tmdb.baseUrl}${request.documentaries}${config.tmdb.apiKey}`
   );
   const response = data.json();
   return response;
@@ -13,4 +34,7 @@ const upcoming = async () => {
 
 module.exports = {
   upcoming,
+  popular,
+  toprated,
+  documentaries,
 };

@@ -6,7 +6,7 @@ module.exports = {
     host: process.env.HOST || "http://localhost:",
   },
   tmdb: {
-    apiKey: process.env.ApiKey,
-    baseUrl: "https://api.themoviedb.org/3",
+    apiKey: process.env.ApiKey || "d25c60689f82d78efa196342437cdd62",
+    baseUrl: "https://api.themoviedb.org/3/",
   },
 };
