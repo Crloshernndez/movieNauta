@@ -3,28 +3,28 @@ const request = require("./requests");
 
 const fetch = require("node-fetch");
 
-const upcoming = async () => {
+const getUpcoming = async () => {
   const data = await fetch(
     `${config.tmdb.baseUrl}${request.upcoming}${config.tmdb.apiKey}`
   );
   const response = data.json();
   return response;
 };
-const popular = async () => {
+const getPopular = async () => {
   const data = await fetch(
     `${config.tmdb.baseUrl}${request.popular}${config.tmdb.apiKey}`
   );
   const response = data.json();
   return response;
 };
-const toprated = async () => {
+const getTop_rated = async () => {
   const data = await fetch(
-    `${config.tmdb.baseUrl}${request.toprated}${config.tmdb.apiKey}`
+    `${config.tmdb.baseUrl}${request.top_rated}${config.tmdb.apiKey}`
   );
   const response = data.json();
   return response;
 };
-const documentaries = async () => {
+const getDocumentaries = async () => {
   const data = await fetch(
     `${config.tmdb.baseUrl}${request.documentaries}${config.tmdb.apiKey}`
   );
@@ -33,8 +33,8 @@ const documentaries = async () => {
 };
 
 module.exports = {
-  upcoming,
-  popular,
-  toprated,
-  documentaries,
+  getUpcoming,
+  getPopular,
+  getTop_rated,
+  getDocumentaries,
 };

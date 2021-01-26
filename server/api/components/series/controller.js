@@ -1,24 +1,23 @@
 const store = require("./store");
 
-function popular() {
+function getPopular() {
   return new Promise((resolve, reject) => {
-    resolve(store.popular());
+    resolve(store.getPopular());
   });
 }
-function toprated() {
+function getTop_rated() {
   return new Promise((resolve, reject) => {
-    resolve(store.toprated());
+    resolve(store.getTop_rated());
   });
 }
-function fetchNetflixOriginals() {
+function getNetflixOriginals() {
   return new Promise((resolve, reject) => {
-    resolve(store.fetchNetflixOriginals());
+    resolve(store.getNetflixOriginals());
   });
 }
 
 module.exports = {
-  upcoming,
-  popular,
-  toprated,
-  fetchNetflixOriginals,
+  getPopular,
+  getTop_rated,
+  getNetflixOriginals,
 };

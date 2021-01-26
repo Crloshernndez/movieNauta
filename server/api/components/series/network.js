@@ -4,29 +4,29 @@ const controller = require("./controller");
 
 const router = express.Router();
 
-router.get("/popular", popular);
-router.get("/top_rated", toprated);
-router.get("/fetchNetflixOriginals", fetchNetflixOriginals);
+router.get("/popular", getPopular);
+router.get("/top_rated", getTop_rated);
+router.get("/netflixOriginals", getNetflixOriginals);
 
-function popular(req, res) {
+function getPopular(req, res) {
   controller
-    .popular()
+    .getPopular()
     .then((list) => {
       response.success(req, res, list, 200);
     })
     .catch((err) => response.error(req, res, err.message, 500));
 }
-function toprated(req, res) {
+function getTop_rated(req, res) {
   controller
-    .toprated()
+    .getTop_rated()
     .then((list) => {
       response.success(req, res, list, 200);
     })
     .catch((err) => response.error(req, res, err.message, 500));
 }
-function fetchNetflixOriginals(req, res) {
+function getNetflixOriginals(req, res) {
   controller
-    .fetchNetflixOriginals()
+    .getNetflixOriginals()
     .then((list) => {
       response.success(req, res, list, 200);
     })
