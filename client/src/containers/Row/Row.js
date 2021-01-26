@@ -21,9 +21,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
-
-      setMovies(request.data.results);
-      return request;
+      const data = request.data.body.results;
+      setMovies(data);
+      return data;
     }
     fetchData();
   }, [fetchUrl]);
@@ -41,9 +41,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         {movies.map((movie) => (
           <MoviePoster
             key={movie.id}
-            url={`${baseUrl}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
+            url={isLargeRow ? movie.poster_path : movie.backdrop_path}
             name={movie.name}
             movieName={movie.name || movie.title}
             grid={grid}
