@@ -1,16 +1,14 @@
 import React from "react";
 import "./Banner.css";
 
-function Banner({ title, description, movie }) {
+function Banner({ title, description, image }) {
   return (
     <div
       className="banner"
       /*background-image  */
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url(
-              "https://image.tmdb.org/t/p/original/${movie}"
-          )`,
+        backgroundImage: { image },
         backgroundPosition: "center center",
       }}
     >

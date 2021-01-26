@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../../components/Banner/Banner";
 import Row from "../../containers/Row/Row";
-import requests from "../../request/Tmdb";
+import requests from "../../request/requests";
 import axios from "../../request/axios";
 
 function Home() {
@@ -9,14 +9,15 @@ function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const request = await axios.get(requests.fetchNetflixOriginals);
+      const request = await axios.get(requests.popularMovies);
+      const data = request.data.body.results;
+      console.log(data);
+
       setMovie(
         //   bloque para pedir pelicula random
-        request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
-        ]
+        data[Math.floor(Math.random() * data.length - 1)]
       );
-      return request;
+      return data;
     }
     fetchData();
   }, []);
@@ -30,9 +31,9 @@ function Home() {
       <Banner
         title={movie?.title || movie?.name || movie?.original_name}
         description={truncate(movie?.overview, 150)}
-        movie={movie?.backdrop_path}
+        image={movie?.backdrop_path}
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Popular Now" fetchUrl={requests.popularMovies} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Movie.css";
 import Row from "../../containers/Row/Row";
-import requests from "../../request/Tmdb";
+import requests from "../../request/requests";
 
 function Movies() {
   return (
@@ -9,8 +9,23 @@ function Movies() {
       <h1 className="movies__title">Movie</h1>
       <Row
         className="movies__row"
-        fetchUrl={requests.fetchTrending}
-        title="Trending Now"
+        fetchUrl={requests.popularMovies}
+        title="Popular Movies"
+      />
+      <Row
+        className="movies__row"
+        fetchUrl={requests.top_ratedMovies}
+        title="Top Rated xb"
+      />
+      <Row
+        className="movies__row"
+        fetchUrl={requests.upcomingMovies}
+        title="Comming Soon !!!"
+      />
+      <Row
+        className="movies__row"
+        fetchUrl={requests.documentariesMovies}
+        title="Documentaries"
       />
     </div>
   );
