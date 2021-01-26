@@ -4,6 +4,8 @@
 
 .movies__title {
   margin-left: 40px;
+  text-align: center;
+  font-size: 70px;
 
   -webkit-animation: movies__title 4s linear both;
   animation: movies__title 4s linear both;

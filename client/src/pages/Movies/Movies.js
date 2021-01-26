@@ -6,7 +6,7 @@ import requests from "../../request/requests";
 function Movies() {
   return (
     <div className="movies">
-      <h1 className="movies__title">Movie</h1>
+      <h1 className="movies__title">Movies</h1>
       <Row
         className="movies__row"
         fetchUrl={requests.popularMovies}

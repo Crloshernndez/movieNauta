@@ -41,7 +41,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
         {movies.map((movie) => (
           <MoviePoster
             key={movie.id}
-            url={isLargeRow ? movie.poster_path : movie.backdrop_path}
+            url={`${baseUrl}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
             name={movie.name}
             movieName={movie.name || movie.title}
             grid={grid}

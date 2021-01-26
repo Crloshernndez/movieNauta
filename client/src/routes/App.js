@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Layout from "../containers/Layout/Layout";
 import Home from "../pages/Home/Home";
 import Movies from "../pages/Movies/Movies";
-import AboutUs from "../pages/AboutUs/AboutUs";
 import Series from "../pages/Series/Series";
 import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 
@@ -17,7 +16,6 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/movies" component={Movies} />
             <Route exact path="/series" component={Series} />
-            <Route exact path="/aboutUs" component={AboutUs} />
             <Route component={NotFoundPage} />
           </Switch>
         </Layout>

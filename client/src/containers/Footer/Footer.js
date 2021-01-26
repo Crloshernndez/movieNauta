@@ -12,9 +12,10 @@ function Footer() {
       <div className="footer">
         <div className="footer__information">
           <p>
-            lorem
+            This product uses the TMDb API but is not endosement by TMDb
             <br />
-            lorem
+            <br />
+            https://www.themoviedb.org/
           </p>
           <br />
         </div>

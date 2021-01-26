@@ -53,7 +53,7 @@ function MovieDetail({ title, description, movie }) {
               id="transition-modal-description"
               title={title}
               description={description}
-              movie={movie}
+              image={movie}
             />
           </div>
         </Fade>

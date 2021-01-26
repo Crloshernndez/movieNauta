@@ -31,7 +31,6 @@ function Header() {
           </Link>
           <Link to="movies">Movies</Link>
           <Link to="series">Series</Link>
-          <Link to="aboutUs">AboutUs</Link>
         </div>
         <div className="header__rigth">
           <TextField

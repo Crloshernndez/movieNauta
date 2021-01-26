@@ -8,7 +8,9 @@ function Banner({ title, description, image }) {
       /*background-image  */
       style={{
         backgroundSize: "cover",
-        backgroundImage: { image },
+        backgroundImage: `url(
+              "https://image.tmdb.org/t/p/original/${image}"
+          )`,
         backgroundPosition: "center center",
       }}
     >

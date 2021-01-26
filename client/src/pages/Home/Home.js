@@ -7,6 +7,8 @@ import axios from "../../request/axios";
 function Home() {
   const [movie, setMovie] = useState([]);
 
+  const baseUrl = "https://image.tmdb.org/t/p/original/";
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.popularMovies);
@@ -21,6 +23,7 @@ function Home() {
     }
     fetchData();
   }, []);
+  console.log(movie);
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;

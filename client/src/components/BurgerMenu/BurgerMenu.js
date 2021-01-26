@@ -97,13 +97,6 @@ function BurgerMenu() {
                       >
                         Series
                       </Link>
-                      <Link
-                        className="burgerMenu__menu-link"
-                        onClick={handleClose}
-                        to="aboutUs"
-                      >
-                        AboutUs
-                      </Link>
                     </div>
                   </div>
                 </ClickAwayListener>

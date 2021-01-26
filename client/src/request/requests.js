@@ -7,6 +7,8 @@ const requests = {
   popularSeries: "series/popular",
   top_ratedSeries: "series/top_rated",
   netflixOriginalsSeries: "series/netflixOriginals",
+
+  images: "https://image.tmdb.org/t/p/original/",
 };
 
 export default requests;
